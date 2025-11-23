@@ -1,0 +1,242 @@
+/* Importar uma fonte mais moderna e limpa do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f6; /* Um cinza claro azulado para o fundo */
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Para rolagem suave */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #003366; /* Azul Marinho da FAB */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra mais pronunciada */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Título maior */
+    font-weight: 700;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Estilo da barra de navegação */
+nav {
+    background-color: #0056b3; /* Azul mais claro para a navegação */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    display: flex; /* Para alinhar os links horizontalmente */
+    justify-content: center; /* Centralizar os links */
+    flex-wrap: wrap; /* Permitir que os links quebrem linha em telas pequenas */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 5px 8px; /* Espaçamento entre os links */
+    border-radius: 25px; /* Bordas mais arredondadas para um visual suave */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição para hover */
+    font-weight: 500;
+    white-space: nowrap; /* Evita quebra de linha nos links */
+}
+
+nav a:hover {
+    background-color: #007bff; /* Azul brilhante no hover */
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+nav a.active {
+    background-color: #007bff; /* Azul brilhante para o item ativo */
+    font-weight: 700;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3); /* Sombra interna para o ativo */
+}
+
+/* Estilo do container principal do conteúdo */
+.container {
+    width: 95%;
+    max-width: 1000px; /* Reduzi um pouco a largura máxima para melhor leitura */
+    margin: 30px auto;
+    background-color: white;
+    padding: 40px; /* Mais preenchimento */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Sombra mais suave e espalhada */
+}
+
+/* Estilo das seções de estudo */
+.study-section {
+    display: none; /* Escondido por padrão, JavaScript controlará a visibilidade */
+    padding: 25px 0; /* Mais espaçamento interno */
+    border-top: 1px solid #eee;
+    margin-top: 25px;
+    opacity: 0; /* Começa invisível para o fade-in */
+    transition: opacity 0.5s ease-in-out; /* Transição de opacidade */
+}
+
+.study-section:first-of-type {
+    border-top: none;
+    margin-top: 0;
+}
+
+.study-section.active {
+    display: block; /* A seção ativa é mostrada */
+    opacity: 1; /* Torna-se visível */
+}
+
+/* Estilo dos títulos de conteúdo */
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h3 {
+    color: #0056b3;
+    margin-top: 35px; /* Mais espaço acima do subtítulo */
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+h4 {
+    color: #0069d9; /* Um tom de azul intermediário */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify; /* Texto justificado para um visual mais formal */
+}
+
+ul, ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+    padding-left: 0; /* Remove padding padrão para melhor controle com margin-left */
+}
+
+ul li, ol li {
+    margin-bottom: 8px; /* Espaçamento entre itens de lista */
+}
+
+blockquote {
+    background-color: #e6f2ff; /* Fundo azul claro */
+    border-left: 5px solid #0056b3; /* Borda azul forte */
+    margin: 25px 0;
+    padding: 15px 25px;
+    font-style: italic;
+    color: #004085; /* Texto azul escuro */
+    border-radius: 0 8px 8px 0; /* Borda arredondada só do lado direito */
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: right;
+    color: #6c757d;
+}
+
+.note {
+    background-color: #fff3cd; /* Fundo amarelo suave */
+    border-left: 5px solid #ffc107; /* Borda amarela */
+    padding: 15px 25px;
+    margin: 25px 0;
+    color: #856404; /* Texto marrom-amarelo */
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 0.9em;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    nav a {
+        display: block; /* Links em bloco para telas muito pequenas */
+        margin: 5px auto;
+        width: calc(100% - 20px); /* Ajustar largura */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+}
+
+/* Estilo para a barra de scroll */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
